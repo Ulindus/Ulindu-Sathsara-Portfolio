@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -15,29 +15,29 @@ import UiUxDesign from "./pages/services/UiUxDesign";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-[#050b18]">
-        <Navbar />
+    <div className="min-h-screen flex flex-col bg-[#050b18]">
+      <Navbar />
 
-        {/* MAIN CONTENT */}
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
+      {/* MAIN CONTENT */}
+      <main className="flex-grow">
+        <Routes>
+          {/* ✅ DEFAULT HOME */}
+          <Route path="/" element={<Home />} />
 
-            <Route path="/services/web-development" element={<WebDevelopment />} />
-            <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
-            <Route path="/services/ui-ux-design" element={<UiUxDesign />} />
-          </Routes>
-        </main>
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+          <Route path="/services/web-development" element={<WebDevelopment />} />
+          <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
+          <Route path="/services/ui-ux-design" element={<UiUxDesign />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
